@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plugin</artifactId>
+        <version>3.10</version>
+    </parent>
+
+    <groupId>io.jenkins.plugins</groupId>
+    <artifactId>jnr-posix-api</artifactId>
+    <version>3.0.45</version>
+    <packaging>hpi</packaging>
+
+    <name>jnr-posix API Plugin</name>
+    <description>Plugin providing jnr-posix API for other plugins.</description>
+    <url>https://wiki.jenkins.io/display/JENKINS/jnr-posix+API+Plugin</url>
+
+    <scm>
+        <connection>scm:git:ssh://github.com/jenkinsci/jnr-posix-api-api-plugin.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/jenkinsci/jnr-posix-api-api-plugin.git</developerConnection>
+        <url>https://github.com/jenkinsci/jnr-posix-api-api-plugin</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <jenkins.version>2.60.3</jenkins.version>
+        <java.level>8</java.level>
+    </properties>
+
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>http://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+
+    <repositories>
+        <repository>
+            <id>repo.jenkins-ci.org</id>
+            <url>http://repo.jenkins-ci.org/public/</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>repo.jenkins-ci.org</id>
+            <url>http://repo.jenkins-ci.org/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.jnr</groupId>
+            <artifactId>jnr-posix</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+</project>
