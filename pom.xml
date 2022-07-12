@@ -28,7 +28,7 @@
     <properties>
         <revision>3.1.15-1</revision>
         <changelist>-SNAPSHOT</changelist>
-        <jenkins.version>2.303.3</jenkins.version>
+        <jenkins.version>2.346.1</jenkins.version>
         <gitHubRepo>jenkinsci/${project.artifactId}-plugin</gitHubRepo>
     </properties>
 
@@ -82,16 +82,4 @@
             </exclusions>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.jenkins-ci.tools</groupId>
-                <artifactId>maven-hpi-plugin</artifactId>
-                <configuration>
-                    <maskClasses>com.kenai.jffi. com.kenai.jnr. hudson.os.PosixAPI jni. jnr.</maskClasses>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>
