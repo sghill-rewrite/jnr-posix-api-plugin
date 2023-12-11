@@ -13,7 +13,8 @@ import jnr.posix.util.DefaultPOSIXHandler;
 public class PosixAPI {
 
     private static POSIX posix;
-    private static /* Script Console modifiable */ boolean VERBOSE = SystemProperties.getBoolean(PosixAPI.class.getName() + ".verbose");
+    private static /* Script Console modifiable */ boolean VERBOSE =
+            SystemProperties.getBoolean(PosixAPI.class.getName() + ".verbose");
 
     /**
      * Load the JNR implementation of the POSIX APIs for the current platform. Runtime exceptions
@@ -24,12 +25,14 @@ public class PosixAPI {
      */
     public static synchronized POSIX jnr() {
         if (posix == null) {
-            posix = POSIXFactory.getPOSIX(new DefaultPOSIXHandler() {
-                @Override
-                public boolean isVerbose() {
-                    return VERBOSE;
-                }
-            }, true);
+            posix = POSIXFactory.getPOSIX(
+                    new DefaultPOSIXHandler() {
+                        @Override
+                        public boolean isVerbose() {
+                            return VERBOSE;
+                        }
+                    },
+                    true);
         }
         return posix;
     }

@@ -15,14 +15,15 @@ import org.junit.rules.TemporaryFolder;
 
 public class PosixAPITest {
 
-    @Rule public ChannelRule channels = new ChannelRule();
+    @Rule
+    public ChannelRule channels = new ChannelRule();
 
-    @Rule public TemporaryFolder temp = new TemporaryFolder();
+    @Rule
+    public TemporaryFolder temp = new TemporaryFolder();
 
     @Test
     public void copyToWithPermissionSpecialPermissions() throws IOException, InterruptedException {
-        assumeFalse(
-                "Test uses POSIX-specific features", Functions.isWindows() || Platform.isDarwin());
+        assumeFalse("Test uses POSIX-specific features", Functions.isWindows() || Platform.isDarwin());
         File tmp = temp.getRoot();
         File original = new File(tmp, "original");
         FilePath originalP = new FilePath(channels.french, original.getPath());

@@ -33,8 +33,12 @@ public final class ChannelRule extends ExternalResource {
         final FastPipedOutputStream p1o = new FastPipedOutputStream(p1i);
         final FastPipedOutputStream p2o = new FastPipedOutputStream(p2i);
 
-        Future<Channel> f1 = executors.submit(() -> new ChannelBuilder("This side of the channel", executors).withMode(Channel.Mode.BINARY).build(p1i, p2o));
-        Future<Channel> f2 = executors.submit(() -> new ChannelBuilder("The other side of the channel", executors).withMode(Channel.Mode.BINARY).build(p2i, p1o));
+        Future<Channel> f1 = executors.submit(() -> new ChannelBuilder("This side of the channel", executors)
+                .withMode(Channel.Mode.BINARY)
+                .build(p1i, p2o));
+        Future<Channel> f2 = executors.submit(() -> new ChannelBuilder("The other side of the channel", executors)
+                .withMode(Channel.Mode.BINARY)
+                .build(p2i, p1o));
         french = f1.get();
         british = f2.get();
     }
